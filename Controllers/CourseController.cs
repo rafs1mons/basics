@@ -10,6 +10,7 @@ namespace basics.Controllers
             var kurs = new Course();
             kurs.Id = 1;
             kurs.Title = "Aspnet Core Kursu";
+            kurs.Description = "Gucel bir kurs";
             return View(kurs);
         }
 
