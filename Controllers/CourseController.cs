@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using basics.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace basics.Controllers
 {
@@ -6,7 +7,10 @@ namespace basics.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            var kurs = new Course();
+            kurs.Id = 1;
+            kurs.Title = "Aspnet Core Kursu";
+            return View(kurs);
         }
 
         public IActionResult List()
