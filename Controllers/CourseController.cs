@@ -15,6 +15,16 @@ namespace basics.Controllers
             return View(kurs);
         }
 
+        public IActionResult Details()
+        {
+            var kurs = new Course();
+            kurs.Id = 1;
+            kurs.Title = "Aspnet Core Kursu";
+            kurs.Description = "Gucel bir kurs";
+            kurs.Image = "course1.jpg";
+            return View(kurs);
+        }
+
         public IActionResult List()
         {
             var kurslar = new List<Course>()
