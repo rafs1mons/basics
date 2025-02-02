@@ -1,5 +1,21 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model List<Course>
 
 @await Html.PartialAsync("_Header")
+
+<div class="row">
+    @foreach (var course in Model)
+    {
+        @if(course.IsHome == true && course.IsHome == true){
+        <div class="col-3">
+            <div class="card">
+                <img src="~/img/@course.Image" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">@course.Title</h5>
+                    <p class="card-text">@course.Description</p>
+                    <a class="btn btn-primary" asp-controller="Course" asp-action="Details" asp-route-id="@course.Id" >Detay</a>
+                </div>
+            </div>
+        </div>
+        }
+    }
+</div>
